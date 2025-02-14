@@ -126,12 +126,18 @@ void handle_input_HW1(){
     }
     char buffer[1024];
     while(1){
-        printf("Enter the operation\nRedis list Operation(LPUSH,LPOP,RPUSH,RPOP,LLEN,LRANGE)\nRedis String Operation(SET,GET,SHOW,DEL)\n");
+        
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF) {}//多加的，// 逐字讀取，直到清除缓冲區，讀一次就清除一次緩衝區
+
+        printf("Enter the operation\n Redis String Operation(SET,GET,SHOW,DEL)\n");
+        
         if (fgets(buffer, sizeof(buffer), stdin) != NULL) {
             buffer[strcspn(buffer, "\n")] = '\0';// 去掉換行符
             char command[10];
             
             if (sscanf(buffer, "%s", command) == 1) {// 使用 sscanf 解析命令
+                
                 char* current_position = buffer; // 使用指標來追蹤位置
                 if(strcmp(command,"SET")==0||strcmp(command,"GET")==0||strcmp(command,"SHOW")==0||strcmp(command,"DEL")==0){
                     current_position+=strlen(command);
@@ -159,6 +165,7 @@ void handle_input_HW1(){
                 } 
             }
         }
+        
         printf("\n");
     }
 }

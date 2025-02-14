@@ -1,0 +1,11 @@
+gcc -c redis_hash.c -o redis_hash.o
+
+gcc -c redis_dll.c -o redis_dll.o
+
+gcc -c redis_str.c -o redis_str.o
+
+gcc -c redis_ss.c -o redis_ss.o
+
+gcc -c redis_json.c -o redis_json.o
+
+gcc -o main main.c redis_dll.o redis_str.o redis_hash.o redis_ss.o redis_json.o -lev

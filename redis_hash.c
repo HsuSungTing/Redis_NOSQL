@@ -189,7 +189,7 @@ void stdin_cb(EV_P_ ev_io *w, int revents) {
     char fields[MAX_FIELDS][20];
     char values[MAX_FIELDS][20];
     int pair_ct = 0;
-    //printf("please input the command(HSET, HGET, HDEL,EXPIRE, SHOW): ");
+    printf("please input the command(HSET, HGET, HDEL,EXPIRE, SHOW): ");
     fgets(input, sizeof(input), stdin);
     sscanf(input, "%s %s", command, key);
     int count = 0;

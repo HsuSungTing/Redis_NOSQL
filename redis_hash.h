@@ -1,5 +1,6 @@
 #ifndef REDIS_HASH_H
 #define REDIS_HASH_H
+#include <ev.h>
 
 #define MAXHASHTABLESIZE 10000
 #define MAX_FIELDS 20

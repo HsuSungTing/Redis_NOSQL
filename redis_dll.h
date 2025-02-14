@@ -1,5 +1,6 @@
 #ifndef REDIS_DLL_H
 #define REDIS_DLL_H
+
 //gcc -o DLL Double_linked_list.c redis_str.o
 struct Node {
     char* key;

@@ -92,6 +92,8 @@ void handle_input_HW3(){
     //--------------------------------------
     char buffer[1024];
     while(1){
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF) {}//多加的，// 逐字讀取，直到清除缓冲區，讀一次就清除一次緩衝區
         printf("Enter the operation\nRedis list Operation(LPUSH,LPOP,RPUSH,RPOP,LLEN,LRANGE)\n");
         if (fgets(buffer, sizeof(buffer), stdin) != NULL) {
             buffer[strcspn(buffer, "\n")] = '\0';// 去掉換行符
